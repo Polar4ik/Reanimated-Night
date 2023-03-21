@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdb4vren7w25l"]
+
+[ext_resource type="PackedScene" uid="uid://bd4pl8ho0hn7c" path="res://object/player.tscn" id="1_cc3tj"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y4wvi"]
+size = Vector2(11, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rikhw"]
+flip_faces = true
+size = Vector2(11, 12)
+
+[sub_resource type="QuadMesh" id="QuadMesh_waway"]
+flip_faces = true
+size = Vector2(4, 9)
+orientation = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_t5vly"]
+size = Vector2(11, 9)
+
+[sub_resource type="QuadMesh" id="QuadMesh_kfnr1"]
+flip_faces = true
+size = Vector2(11, 8)
+
+[sub_resource type="QuadMesh" id="QuadMesh_2la2l"]
+size = Vector2(4, 9)
+orientation = 0
+
+[node name="Levl_1" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_cc3tj")]
+max_rot = 90.0
+min_rot = -90.0
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Office" type="Node3D" parent="Map"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Office"]
+mesh = SubResource("PlaneMesh_y4wvi")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Map/Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+mesh = SubResource("PlaneMesh_rikhw")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Map/Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 3.5, 4.456)
+mesh = SubResource("QuadMesh_waway")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Map/Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 3.5, -4.456)
+mesh = SubResource("QuadMesh_waway")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Map/Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -5.956)
+mesh = SubResource("QuadMesh_t5vly")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Map/Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 6.044)
+mesh = SubResource("QuadMesh_kfnr1")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Map/Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 3.5, 4.456)
+mesh = SubResource("QuadMesh_2la2l")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Map/Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 3.5, -4.456)
+mesh = SubResource("QuadMesh_2la2l")
+skeleton = NodePath("../..")
+
+[node name="Door" type="Node3D" parent="."]

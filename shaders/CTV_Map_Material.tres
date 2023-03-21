@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://eitivrwcrkqn"]
+
+[ext_resource type="Shader" uid="uid://rp5dpk0q4fjv" path="res://shaders/CTV_Shader.tres" id="1_aqxoo"]
+[ext_resource type="Texture2D" uid="uid://dkyk4eugvjbpx" path="res://shaders/fnafmap.png" id="2_hii1r"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_aqxoo")
+shader_parameter/noise_speed = 100.0
+shader_parameter/line_count = 2
+shader_parameter/line_speed = 2.0
+shader_parameter/line_scale = 0.3
+shader_parameter/RGB_scale = 250
+shader_parameter/tex_frg_3 = ExtResource("2_hii1r")
